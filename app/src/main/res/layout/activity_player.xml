@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayerActivity">
+
+    <TextView
+        android:id="@+id/song"
+        android:layout_width="207dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="12dp"
+        android:textAlignment="textStart"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/artist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.177"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/artwork"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/artist"
+        android:layout_width="116dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="28dp"
+        android:textAlignment="textStart"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="343dp"
+        android:layout_height="16dp"
+        android:layout_marginBottom="152dp"
+        android:progressTint="@color/white"
+        android:thumbTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/nav_background_curved"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_navigation"></com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <ImageView
+        android:id="@+id/artwork"
+        android:layout_width="301dp"
+        android:layout_height="313dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.334"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flexboxLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:justifyContent="space_evenly"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:layout_constraintVertical_bias="0.378">
+
+        <ImageButton
+            android:id="@+id/previous"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="15dp"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#003171B8"
+            android:onClick="prevTrack"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/prev_button"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            tools:layout_editor_absoluteX="82dp"
+            tools:layout_editor_absoluteY="494dp" />
+
+        <ImageButton
+            android:id="@+id/stateButton"
+            android:layout_width="72dp"
+            android:layout_height="70dp"
+            android:background="?attr/selectableItemBackground"
+            android:backgroundTint="#003171B8"
+            android:onClick="playPauseMusic"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/play_button"
+            tools:ignore="SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteX="173dp"
+            tools:layout_editor_absoluteY="485dp" />
+
+        <ImageButton
+            android:id="@+id/next"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="15dp"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#003171B8"
+            android:onClick="nextTrack"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/next_button"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            tools:layout_editor_absoluteX="270dp"
+            tools:layout_editor_absoluteY="494dp" />
+    </com.google.android.flexbox.FlexboxLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
